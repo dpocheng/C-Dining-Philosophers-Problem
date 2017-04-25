@@ -1,0 +1,18 @@
+Input: numPhilosopher
+
+numThread = numPhilosopher
+Initialize philosopher struct
+Initialize Mutex
+Create thread[i] to execute Eat_Meal(&phil_data[i])
+Destroy mutex
+----------------------------------------------------
+Eat_Meal(chunk, largest)
+    for three courses:
+        Try locking fork in front
+        If locked:
+            Try locking fork on right
+            If locked:
+                sleep(1) - Eating a course
+                Unlock both forks
+            Else:
+                Drop the fork from the front
